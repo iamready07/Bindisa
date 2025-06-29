@@ -57,10 +57,10 @@ const Navbar: React.FC = () => {
             <div className="hidden flex items-center">
               <img
                 loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets%2F740e0aee3e534c8a969cc741175154a3%2Fb42e486112e949778170c1a33850a089"
+                src="BINDISA-NEW.png"
                 alt="Bindisa Agritech Logo"
-                className="w-full min-w-5 object-cover object-center overflow-hidden pb-6 mr-auto flex-grow"
-                style={{ aspectRatio: "1.42" }}
+                className="h-32 object-cover object-center overflow-hidden pb-6 mr-auto flex-grow"
+                // style={{ aspectRatio: "1.42" }}
               />
               <span className="text-white font-bold text-lg">B</span>
             </div>

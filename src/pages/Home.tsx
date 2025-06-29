@@ -111,6 +111,7 @@ const Home: React.FC = () => {
         title={t("hero.tagline")}
         subtitle={t("hero.subtitle")}
         description={t("hero.description")}
+        backgroundImage="farm.jpg"
         primaryAction={{
           text: t("hero.cta"),
           onClick: () => navigate("/about"),
@@ -131,10 +132,10 @@ const Home: React.FC = () => {
                 >
                   <Icon className="w-6 h-6" />
                 </div>
-                <div className="text-2xl font-bold text-gray-900">
+                <div className="text-2xl font-bold text-white">
                   {stat.value}
                 </div>
-                <div className="text-sm text-gray-600">{stat.label}</div>
+                <div className="text-sm text-white">{stat.label}</div>
               </div>
             );
           })}
@@ -421,7 +422,7 @@ const Home: React.FC = () => {
               onClick={() => navigate("/chatbot")}
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-agri-primary"
+              className="border-white bg-primary text-white hover:bg-white hover:text-agri-primary"
             >
               Try Our Chatbot
             </Button>
