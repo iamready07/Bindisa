@@ -8,8 +8,7 @@
     "build": "vite build",
     "test": "vitest --run",
     "format.fix": "prettier --write .",
-    "typecheck": "tsc",
-    "postinstall": "if [ \"$(uname)\" = \"Linux\" ]; then npm install @rollup/rollup-linux-x64-gnu @swc/core-linux-x64-gnu; fi"
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -41,8 +40,6 @@
     "@radix-ui/react-toggle-group": "^1.1.0",
     "@radix-ui/react-tooltip": "^1.1.4",
     "@react-three/fiber": "^8.18.0",
-    "@rollup/rollup-linux-x64-gnu": "^4.42.0",
-    "@swc/core-linux-x64-gnu": "^1.11.31",
     "@tanstack/react-query": "^5.56.2",
     "@types/three": "^0.176.0",
     "class-variance-authority": "^0.7.1",
@@ -75,11 +72,11 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
-    "autoprefixer": "^10.4.20",
+    "autoprefixer": "^10.4.21",
     "globals": "^15.9.0",
-    "postcss": "^8.4.47",
+    "postcss": "^8.5.6",
     "prettier": "^3.5.3",
-    "tailwindcss": "^3.4.11",
+    "tailwindcss": "^3.4.17",
     "typescript": "^5.5.3",
     "vite": "^5.4.1",
     "vitest": "^3.1.4"
