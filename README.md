@@ -131,6 +131,10 @@ For testing the authentication system:
 - **Phone**: +91 9631157174
 - **CIN**: U46539BR2025PTC073688
 
+## 🚀 Deployment
+
+The live website is hosted at:
+**https://84d5e124c4bf443a9959862558e52ffe-ae9b4ca0132849758c8f0e94f.fly.dev/**
 
 ## 🔧 Troubleshooting
 
