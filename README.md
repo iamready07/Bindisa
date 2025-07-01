@@ -82,8 +82,8 @@ Install these VS Code extensions for better development experience:
 
 ## 🌟 Features Included
 
-✅ **12 Complete Pages**
-✅ **3 Languages** (English, Hindi, Marathi)
+✅ ** Complete Pages**
+✅ ** Languages** (English, Hindi, Marathi)
 ✅ **Interactive Soil Analysis Tool**
 ✅ **AI Chatbot**
 ✅ **Authentication System**
