@@ -1,8 +1,8 @@
-# 🌾 Bindisa Agritech - Complete Frontend Setup
+# 🌾 Bindisa Agritech - Complete Frontend Setup.
 
 ## 📋 Quick Setup Instructions for VS Code
 
-Follow these steps to run the complete Bindisa Agritech website on your local machine:
+Follow these steps to run the complete Bindisa Agritech website on your local machine/setup:
 
 ### 1. Prerequisites
 
