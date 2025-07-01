@@ -113,9 +113,9 @@ The website is fully responsive and works on:
 
 The website supports three languages:
 
-- **English** (en)
-- **हिंदी** (hi)
-- **मराठी** (mr)
+- **English** (En)
+- **हिंदी** (Hi)
+- **मराठी** (Mr)
 
 ## 🔐 Demo Login Credentials
 
@@ -140,9 +140,9 @@ The live website is hosted at:
 
 If you encounter any issues:
 
-1. **Node.js version**: Make sure you have Node.js 18+
+1. **Node.js version**: Make sure you have Node.js 18+ Version
 2. **Clear cache**: Delete `node_modules` and `package-lock.json`, then run `npm install`
-3. **Port conflict**: If port 3000 is busy, the dev server will use the next available port
+3. **Port conflict**: If port 3000 is busy, the dev server will use the next available ports
 4. **TypeScript errors**: Run `npm run build` to check for any TypeScript issues
 
 ## 📚 Technology Stack
@@ -156,6 +156,6 @@ If you encounter any issues:
 
 ---
 
-**Happy Coding!!! 🚀**
+**Happy Coding !!! 🚀**
 
-_Built with ❤️ for modern agriculture in India_
+__Built with ❤️ for modern agriculture in India__
