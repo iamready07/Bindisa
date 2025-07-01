@@ -34,7 +34,7 @@ const Hero: React.FC<HeroProps> = ({
       style={
         backgroundImage
           ? {
-              backgroundImage: `linear-gradient(135deg, rgba(22, 163, 74, 0.9) 0%, rgba(34, 197, 94, 0.8) 100%), url(${backgroundImage})`,
+              backgroundImage: `linear-gradient(180deg, rgba(202, 202, 202, 0.56) 0%, rgba(100, 100, 100, 0.39) 100%), url(${backgroundImage})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }
@@ -54,7 +54,7 @@ const Hero: React.FC<HeroProps> = ({
           </h1>
 
           {description && (
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto animate-fade-in">
+            <p className="text-xl text-white mb-8 max-w-3xl mx-auto animate-fade-in">
               {description}
             </p>
           )}
