@@ -52,7 +52,7 @@ const SuccessStories: React.FC = () => {
 
   return (
     <div>
-      {/* Hero Section */}
+      {/*  Our Hero Section */}
       <Hero
         title="Success Stories"
         subtitle="Real Farmers, Real Results"
