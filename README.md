@@ -82,15 +82,15 @@ Install these VS Code extensions for better development experience:
 
 ## 🌟 Features Included
 
-✅ ** Complete Pages**
-✅ ** Languages** (English, Hindi, Marathi)
-✅ **Interactive Soil Analysis Tool**
-✅ **AI Chatbot**
-✅ **Authentication System**
-✅ **Team Management**
-✅ **Mobile Responsive Design**
-✅ **Company Contact Form**
-✅ **Google Maps Integration**
+✅ - Complete Pages**
+✅ - Languages** (English, Hindi, Marathi)
+✅ -Interactive Soil Analysis Tool**
+✅ -AI Chatbot**
+✅ -Authentication System**
+✅ -Team Management**
+✅ -Mobile Responsive Design**
+✅ -Company Contact Form**
+✅ -Google Maps Integration**
 
 ## 🎨 Color Scheme
 
