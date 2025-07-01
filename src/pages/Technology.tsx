@@ -333,6 +333,28 @@ const Technology: React.FC = () => {
           </div>
         </div>
       </section>
+      {/* Demo Video Section */}
+      <section className="py-20 bg-white">
+        <div className="container-max section-padding text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            See It In Action
+          </h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+            Watch how our AI-powered Bindisa agri-tech platform transforms
+            traditional farming.
+          </p>
+          <div className="aspect-video max-w-4xl mx-auto rounded-xl overflow-hidden shadow-lg">
+            <iframe
+              src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+              title="AgriTech Demo"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            />
+          </div>
+        </div>
+      </section>
 
       {/* Technology Benefits */}
       <section className="py-20 bg-gray-50">
