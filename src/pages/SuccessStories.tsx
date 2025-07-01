@@ -67,7 +67,7 @@ const SuccessStories: React.FC = () => {
         }}
       />
 
-      {/* Impact Statistics */}
+      {/* Impact Statistics developed by mounadeep */}
       <section className="py-16 bg-white border-b">
         <div className="container-max section-padding">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
