@@ -49,12 +49,19 @@ const SoilAnalysis: React.FC = () => {
   const [soilData, setSoilData] = useState<SoilData>({
     ph: 7.0,
     moisture: 60,
-    nitrogen: 50,
-    phosphorus: 40,
-    potassium: 45,
+    nitrogen: 50, // kg/ha
+    phosphorus: 40, // kg/ha
+    potassium: 45, // kg/ha
     temperature: 25,
   });
   const [showResults, setShowResults] = useState(false);
+
+  // History state
+  const [history, setHistory] = useState<{
+    soilData: SoilData;
+    analysisResult: AnalysisResult;
+    timestamp: number;
+  }[]>([]);
 
   const analyzeSoil = (data: SoilData): AnalysisResult => {
     const result: AnalysisResult = {
@@ -175,6 +182,14 @@ const SoilAnalysis: React.FC = () => {
 
   const handleAnalyze = () => {
     setShowResults(true);
+    setHistory((prev) => [
+      {
+        soilData: { ...soilData },
+        analysisResult: analyzeSoil(soilData),
+        timestamp: Date.now(),
+      },
+      ...prev,
+    ]);
   };
 
   const analysisResult = analyzeSoil(soilData);
@@ -350,7 +365,7 @@ const SoilAnalysis: React.FC = () => {
                     <Label className="flex items-center space-x-2 mb-3">
                       <span>Nitrogen (N)</span>
                       <span className="text-sm text-gray-500">
-                        ({soilData.nitrogen}%)
+                        ({soilData.nitrogen} kg/ha)
                       </span>
                     </Label>
                     <Slider
@@ -358,7 +373,7 @@ const SoilAnalysis: React.FC = () => {
                       onValueChange={(value) =>
                         setSoilData({ ...soilData, nitrogen: value[0] })
                       }
-                      max={100}
+                      max={300}
                       min={0}
                       step={1}
                       className="w-full"
@@ -370,7 +385,7 @@ const SoilAnalysis: React.FC = () => {
                     <Label className="flex items-center space-x-2 mb-3">
                       <span>Phosphorus (P)</span>
                       <span className="text-sm text-gray-500">
-                        ({soilData.phosphorus}%)
+                        ({soilData.phosphorus} kg/ha)
                       </span>
                     </Label>
                     <Slider
@@ -378,7 +393,7 @@ const SoilAnalysis: React.FC = () => {
                       onValueChange={(value) =>
                         setSoilData({ ...soilData, phosphorus: value[0] })
                       }
-                      max={100}
+                      max={200}
                       min={0}
                       step={1}
                       className="w-full"
@@ -390,7 +405,7 @@ const SoilAnalysis: React.FC = () => {
                     <Label className="flex items-center space-x-2 mb-3">
                       <span>Potassium (K)</span>
                       <span className="text-sm text-gray-500">
-                        ({soilData.potassium}%)
+                        ({soilData.potassium} kg/ha)
                       </span>
                     </Label>
                     <Slider
@@ -398,7 +413,7 @@ const SoilAnalysis: React.FC = () => {
                       onValueChange={(value) =>
                         setSoilData({ ...soilData, potassium: value[0] })
                       }
-                      max={100}
+                      max={300}
                       min={0}
                       step={1}
                       className="w-full"
@@ -475,6 +490,12 @@ const SoilAnalysis: React.FC = () => {
                               <span className="font-medium capitalize">
                                 {key === "ph" ? "pH" : key}
                               </span>
+                              {/* Show NPK in kg/ha */}
+                              {(["nitrogen", "phosphorus", "potassium"] as string[]).includes(key) && (
+                                <span className="ml-2 text-xs text-gray-500">(
+                                  {soilData[key as keyof SoilData]} kg/ha
+                                )</span>
+                              )}
                             </div>
                             <p className="text-sm">{status.message}</p>
                           </div>
@@ -526,6 +547,49 @@ const SoilAnalysis: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* History Section */}
+      {history.length > 0 && (
+        <section className="py-10 bg-white">
+          <div className="container-max section-padding">
+            <h3 className="text-2xl font-bold mb-4 text-gray-900">Soil Analysis History (This Session)</h3>
+            <div className="overflow-x-auto">
+              <table className="min-w-full bg-white border border-gray-200 rounded-lg">
+                <thead>
+                  <tr>
+                    <th className="px-3 py-2 border-b">Date/Time</th>
+                    <th className="px-3 py-2 border-b">pH</th>
+                    <th className="px-3 py-2 border-b">Moisture (%)</th>
+                    <th className="px-3 py-2 border-b">N (kg/ha)</th>
+                    <th className="px-3 py-2 border-b">P (kg/ha)</th>
+                    <th className="px-3 py-2 border-b">K (kg/ha)</th>
+                    <th className="px-3 py-2 border-b">Temp (°C)</th>
+                    <th className="px-3 py-2 border-b">Crops</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {history.map((entry, idx) => (
+                    <tr key={entry.timestamp} className="text-center">
+                      <td className="px-3 py-2 border-b text-xs">
+                        {new Date(entry.timestamp).toLocaleString()}
+                      </td>
+                      <td className="px-3 py-2 border-b">{entry.soilData.ph}</td>
+                      <td className="px-3 py-2 border-b">{entry.soilData.moisture}</td>
+                      <td className="px-3 py-2 border-b">{entry.soilData.nitrogen}</td>
+                      <td className="px-3 py-2 border-b">{entry.soilData.phosphorus}</td>
+                      <td className="px-3 py-2 border-b">{entry.soilData.potassium}</td>
+                      <td className="px-3 py-2 border-b">{entry.soilData.temperature}</td>
+                      <td className="px-3 py-2 border-b text-xs">
+                        {entry.analysisResult.recommendedCrops.join(", ")}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* How It Works */}
       <section className="py-20 bg-white">
