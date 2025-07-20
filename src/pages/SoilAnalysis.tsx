@@ -31,7 +31,7 @@ interface SoilData {
   phosphorus: number;
   potassium: number;
   temperature: number;
-  // Additional parameters for more precise analysis
+  
   organicMatter: number; // %
   electricalConductivity: number; // dS/m
   calcium: number; // mg/kg
